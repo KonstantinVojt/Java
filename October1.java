@@ -7,13 +7,13 @@ public class October1 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Темрепатупа воздуха: ");
-        int degrees = sc.nextInt();
+        int air = sc.nextInt();
         System.out.println("Температура воды: ");
-        int degrees1 = sc.nextInt();
+        int water = sc.nextInt();
         System.out.println("Ехать(true), Не ехать(false):");
         System.out.println();
-        boolean air_water = (degrees > 28) && (degrees1 > 26);
-        System.out.println(air_water);
+        boolean answer = (air > 28) && (water > 26);
+        System.out.println(answer);
 
 
 
