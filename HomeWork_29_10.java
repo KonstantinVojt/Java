@@ -11,7 +11,7 @@ public class HomeWork_29_10 {
             number = number / 10;
 
         }
-        System.out.print(sum + " ");
+        System.out.print(sum);
 
     }
 }
