@@ -37,6 +37,7 @@ public class Array_2_0 {
                 chars[i] = 0;
             }
         }
+        System.out.println(Arrays.toString(chars));
         int sum = 0;
         for (int i=1; i<100; i++){
             sum += chars[i];
