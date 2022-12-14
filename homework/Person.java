@@ -1,7 +1,5 @@
 package homework;
 
-import java.util.Scanner;
-
 public class Person {
 
     String name;
