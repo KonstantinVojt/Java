@@ -46,7 +46,7 @@ public class Game {
         }
         FielPrinter fielPrinter = new FielPrinter(field.length);
         fielPrinter.printField(field);
-        System.out.println("Вы уничтожили кораблей: " + one + " с одной палубой и в " + two + " с двумя палубами");
+        System.out.println("Вы уничтожили кораблей: " + one + " с одной палубой и " + two + " с двумя палубами");
 
     }
 }
