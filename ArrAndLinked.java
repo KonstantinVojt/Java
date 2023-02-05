@@ -7,17 +7,17 @@ public class ArrAndLinked {
         LinkedList<String> linked = new LinkedList<>();
 
 
-        arr.add("Bob");
-        arr.add("Djo");
+        arr.add("Robert");
+        arr.add("Joseph");
         arr.add("Elvis");
 
         System.out.println(arr);
 
         linked.add("Marvin");
-        linked.add("Mars");
-        linked.add("Marty");
+        linked.add("Alex");
+        linked.add("Martin");
 
-        arr.set(1, "Bob");
+        arr.set(1, "Robert");
         arr.remove(2);
 
         linked.addAll(arr);
