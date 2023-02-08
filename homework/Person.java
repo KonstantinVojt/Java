@@ -1,6 +1,7 @@
 package homework;
 
 //import java.util.ArrayList;
+
 import java.util.List;
 
 public abstract class Person {
@@ -41,6 +42,14 @@ public abstract class Person {
         }
     }
 
+    public void infoAboutChildren() {
+        int counter = 0;
+        System.out.println("У меня " + child.size() + " детей");
+        for (Person children : child) {
+            counter++;
+            System.out.println(counter + ") " + children.name);
+        }
+    }
 
     public static String getPresident() {
         return president;

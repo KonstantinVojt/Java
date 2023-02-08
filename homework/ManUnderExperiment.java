@@ -28,32 +28,49 @@ public class ManUnderExperiment {
 //
 //        person.die();
 
-        Pensioner person = new Pensioner("Bob", 40, 40, 70);
+
         Worker worker = new Worker();
-        Person worker2 = new Worker();
 
-        List<Person> list =new ArrayList<>();
-        list.add(worker);
-        list.add(person);
-        list.add(worker2);
-        worker.setChild(list);
+        List<Person> children = new ArrayList<>();
 
-        System.out.println(worker.getChild());
-        person.setChild(list);
-        person.die();
-//        person.setPension(2500);
-//        person1.die();
-//
+        Worker firstChild = new Worker();
+        firstChild.setName("Elvis");
+
+        Worker secondChild = new Worker();
+        secondChild.setName("Pinocchio");
+
+        children.add(firstChild);
+        children.add(secondChild);
+
+        worker.setChild(children);
+
+        worker.infoAboutChildren();
+
+
+        Company company = new Company("Microsoft");
+        Company company2 = new Company("Apple");
+        Company company3 = new Company("Google");
+        List<Company> companyList = new ArrayList<>();
+
+        companyList.add(company);
+        companyList.add(company2);
+        companyList.add(company3);
+        worker.setCompanies(companyList);
+
+        worker.infoAboutCompany();
+
 //        person.setAge(90);
 //        person.die();
-        worker.setAge(50);
-        worker.setMinSalary(1000);
-        worker.setMaxSalary(2000);
+
+//        worker.setAge(50);
+//        worker.setMinSalary(1000);
+//        worker.setMaxSalary(2000);
+
 //        worker.die();
 
-        worker2.die();
-
-        System.out.println(worker.calculatePension());
+//        worker2.die();
+//
+//        System.out.println(worker.calculatePension());
 
 
 

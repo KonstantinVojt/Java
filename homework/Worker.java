@@ -1,11 +1,13 @@
 package homework;
 
+import java.util.List;
+
 public class Worker extends Person implements AbleToCalculatePension {
 
     private int minSalary;
     private int maxSalary;
-    private static final int MONEY_PER_CHILD =  200;
-
+    private static final int MONEY_PER_CHILD = 200;
+    private List<Company> companies;
 
 
     @Override
@@ -15,13 +17,27 @@ public class Worker extends Person implements AbleToCalculatePension {
         if (getChild() != null) {
             addMoney = getChild().size() * MONEY_PER_CHILD;
         }
-        double result = pensionFund.pensionCalculation(getAge(), minSalary + addMoney, maxSalary );
+        double result = pensionFund.pensionCalculation(getAge(), minSalary + addMoney, maxSalary);
         return result;
     }
 
     @Override
     public void die() {
         System.out.println("Этот чловек не дожил до пенсии");
+    }
+
+    public void infoAboutCompany() {
+        System.out.println("Я работал в следующих компаниях: ");
+        boolean start = true;
+        for (Company company : companies) {
+            if (start){
+                System.out.print(company.getName());
+                start = false;
+            }
+            else {
+                System.out.print(", " + company.getName());
+            }
+        }
     }
 
     public int getMinSalary() {
@@ -40,4 +56,11 @@ public class Worker extends Person implements AbleToCalculatePension {
         this.maxSalary = maxSalary;
     }
 
+    public List<Company> getCompanies() {
+        return companies;
+    }
+
+    public void setCompanies(List<Company> companies) {
+        this.companies = companies;
+    }
 }
