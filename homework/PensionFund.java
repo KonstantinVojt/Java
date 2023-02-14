@@ -7,27 +7,27 @@ public class PensionFund {
     Enum ThreeType;
     private static final double COEFFICIENT = 0.02;
     private String fundName;
-    private ThreeType fundState;
+    private TypeOfFund fundState;
     private int creationOfAFund;
 
 
 
-    public PensionFund(String fundName, ThreeType fundState, int creationOfAFund) {
+    public PensionFund(String fundName, TypeOfFund fundState, int creationOfAFund) {
         this.fundName = fundName;
         this.fundState = fundState;
         this.creationOfAFund = creationOfAFund;
     }
 
     public double pensionCalculation(int yearWork, int minMoney, int maxMoney) {
-        AverageValue averageValue = new AverageValue();
+        AverageUtils averageUtils = new AverageUtils();
         double answer;
         switch (fundState) {
             case STATE:
-                answer = averageValue.averageState(maxMoney, minMoney) * COEFFICIENT * yearWork;
+                answer = averageUtils.averageState(maxMoney, minMoney) * COEFFICIENT * yearWork;
             break;
 
             case NOT_STATE:
-                answer = averageValue.averageState(maxMoney, minMoney, 1500) * COEFFICIENT * yearWork;
+                answer = averageUtils.averageState(maxMoney, minMoney, 1500) * COEFFICIENT * yearWork;
             break;
 
             case SCAMMERS:

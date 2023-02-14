@@ -1,6 +1,7 @@
 package homework;
 
 import java.util.List;
+import java.util.Set;
 
 public class Worker extends Person implements AbleToCalculatePension {
 
@@ -8,17 +9,23 @@ public class Worker extends Person implements AbleToCalculatePension {
     private int maxSalary;
     private static final int MONEY_PER_CHILD = 200;
     private List<Company> companies;
+    private Set<PensionFund> pensionFunds;
 
 
     @Override
     public double calculatePension() {
-        PensionFund pensionFund = new PensionFund("sich", ThreeType.STATE, 25);
         int addMoney = 0;
         if (getChild() != null) {
             addMoney = getChild().size() * MONEY_PER_CHILD;
         }
-        double result = pensionFund.pensionCalculation(getAge(), minSalary + addMoney, maxSalary);
-        return result;
+        double maxPension = 0.0;
+        for (PensionFund fund : pensionFunds) {
+            double result = fund.pensionCalculation(getAge(), minSalary + addMoney, maxSalary);
+            if (result > maxPension){
+                maxPension = result;
+            }
+        }
+        return maxPension;
     }
 
     @Override
@@ -62,5 +69,13 @@ public class Worker extends Person implements AbleToCalculatePension {
 
     public void setCompanies(List<Company> companies) {
         this.companies = companies;
+    }
+
+    public Set<PensionFund> getPensionFunds() {
+        return pensionFunds;
+    }
+
+    public void setPensionFunds(Set<PensionFund> pensionFunds) {
+        this.pensionFunds = pensionFunds;
     }
 }
