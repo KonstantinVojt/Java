@@ -33,9 +33,6 @@ public abstract class Person implements Comparable {
 
     }
 
-    //    public void comparisonWorker(Worker workerOne, Pensioner workerTwo) {
-//
-//    }
     public static void comparisonWorkerAndPensioner(Worker workerOne, Pensioner pensionerTwo) {
 
     }
