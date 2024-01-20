@@ -4,7 +4,7 @@ package homework;
 
 import java.util.List;
 
-public abstract class Person implements Comparable {
+public class Person implements Comparable<Person> {
 
     private static String president;
     private String name;
@@ -119,6 +119,28 @@ public abstract class Person implements Comparable {
         this.child = child;
     }
 
-    public abstract void die();
+    public void die() {
 
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        int firstNameLen = -1;
+        int secondNameLen = -1;
+
+        if (name != null) {
+            firstNameLen = name.length();
+        }
+
+        if (o.name != null) {
+            secondNameLen = o.name.length();
+        }
+
+        if (firstNameLen != secondNameLen) {
+            return Integer.compare(firstNameLen, secondNameLen);
+        } else {
+            return Integer.compare(age, o.age);
+        }
+    }
+    
 }
